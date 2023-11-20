@@ -26,7 +26,6 @@
             <div class="mb-4">
                 <vue3-select
                     id="airport"
-                    v-model="selectedAirport"
                     :options="airportOptions"
                     label="name"
                     value="id"
@@ -48,14 +47,11 @@ export default {
     },
     props: {
         countries: Object,
-        cities: Object,
-        airports: Object,
     },
     data() {
         return {
             selectedCountry: null,
             selectedCity: null,
-            selectedAirport: null,
             countryOptions: this.countries,
             cityOptions: [],
             airportOptions: [],
