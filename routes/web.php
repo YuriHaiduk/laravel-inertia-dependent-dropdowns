@@ -36,10 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::group([
-    'middleware' => ['auth'],
-], function () {
-    Route::get('/form', [FormController::class, 'index']);
-});
 
-require __DIR__.'/auth.php';
+Route::get('/form', [FormController::class, 'index'])->middleware('auth');
+
+
+require __DIR__ . '/auth.php';
